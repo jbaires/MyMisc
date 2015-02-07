@@ -1,0 +1,48 @@
+<html ng-app="demoApp">
+<head>
+  <title>Angular JS Demo Index Page </title>
+</head>
+<link rel="stylesheet" href="Content/bootstrap.min.css"/>
+<link rel="stylesheet" href="Content/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+<body ng-init="rulesregulations='<h2><b> Test Text <b/></h2>'">
+
+<div style="margin-left:50px;">
+<form class="form-horizontal">
+  <div class="form-group row">
+    <div class="col-md-10 col-md-5">
+      <h3><b>Rules & Regulations</b></h3>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-5">
+      <div class="container lighter" style="border:solid 2px black;">  
+        <div text-angular ng-model="rulesregulations" name="demo-editor"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-1 col-md-offset-6">
+      <button type="button" class="btn btn-default" ng-click="cancelEvent()">Cancel</button>
+    </div>
+    <br/>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-primary" ng-click="saveEvent()">Next</button>
+    </div>
+  </div>
+</form>
+</div>
+
+</body>
+
+<!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+<script src="scripts/angular.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular-sanitize.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js'></script>
+
+<!-- App libs -->
+<script src="app/app.js"></script>
+</html>

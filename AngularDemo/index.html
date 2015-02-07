@@ -1,0 +1,60 @@
+<html ng-app="demoApp">
+<head>
+  <title>Angular JS Demo Index Page </title>
+</head>
+
+<link rel="stylesheet" href="Content/bootstrap.min.css"/>
+<link rel="stylesheet" href="Content/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+<body style="margin-left:50px;">
+
+<!-- BEGIN: PEOPLE CONTROLLER -->
+<div ng-controller="peopleController">
+<h2>School: {{ school }}</h2>
+Name: <input ng-model="searchName.name" /> 
+<br>
+<!-- {{ searchName | uppercase }} -->
+<br>
+  <ul>
+    <li ng-repeat="person in people | filter:searchName" > {{ person.name  }} - {{ person.dob }} - {{ currentAge( person.dob ) }}</li>
+  </ul>
+
+<!--
+<div class="container lighter" style="border:solid 2px black;">  
+  <div text-angular ng-model="school" name="demo-editor" ta-text-editor-class="border-around" ta-html-editor-class="border-around"></div>
+</div>
+-->
+
+</div>
+<!-- END: PEOPLE CONTROLLER -->
+
+
+
+#################################################################################################################
+
+
+<!-- BEGIN: SCHOOL CONTROLLER -->
+<div ng-controller="schoolController">
+  <div ng-repeat="school in schools | orderBy:'schoolname'" ng-click="showAlert( school.id )">{{ school.schoolname | uppercase }} - {{ school.id }}</div>
+  <br />
+  id: <input ng-model="newschool.schoolid" />  school: <input ng-model="newschool.schoolname" />
+  <br />
+  <br />
+  <button type="button" class="btn btn-primary" ng-click="newSchool()">New School</button>
+</div>
+<!-- END: SCHOOL CONTROLLER -->
+
+</body>
+
+<!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+<script src="scripts/angular.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular-sanitize.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js'></script>
+
+<!-- App libs -->
+<script src="app/app.js"></script>
+<script src="app/controllers/controllers.js"></script>
+<script src="app/controllers/peopleController.js"></script>
+
+</html>
