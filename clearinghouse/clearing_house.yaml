@@ -1,0 +1,50 @@
+fields:
+  application:
+    type: text
+    application: Application
+
+  link:
+    type: text
+    display: Link    
+    
+  description:
+    type: markitup
+
+  purpose:
+    type: markitup
+
+  misc:
+    type: markitup    
+
+  image:
+    type: file
+    allowed: [png, gif, jpg, jpeg]
+    destination: assets/img/publication    
+    display: Thumb Nail
+    
+  groups:
+    display: Groups
+    type: grid
+    starting_rows: 1
+    min_rows: 1
+    max_rows: 1
+    fields:
+      student:
+        display: Lucy Calkins
+        type: checkbox
+        default: 0
+      family:
+        display: Project Leaders
+        type: checkbox
+        default: 0
+      teacher:
+        display: Staff Developers
+        type: checkbox
+        default: 0
+      administration  
+        display: Staff Developers
+        type: checkbox
+        default: 0
+
+hide: true
+
